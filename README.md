@@ -29,3 +29,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Features
 
 feat 1 fixed once
+
+feat 2
+
+feat 3
+
+feat 4
