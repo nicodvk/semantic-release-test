@@ -1,0 +1,25 @@
+name: "[BUILD] RELEASE : Build & Deploy"
+
+on:
+  push:
+    tags:
+      - "*.*.*"
+  workflow_dispatch:
+
+jobs:
+  npm-get-version:
+    name: "#️⃣ Get project version"
+    runs-on: [self-hosted, Linux, standard]
+    outputs:
+      app_version: ${{ steps.get_version.outputs.version }}
+    steps:
+      - name: "↪️ Checkout"
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.ref_name }}
+      - name: "#️⃣ Npm get version"
+        id: get_version
+        run: |
+          VERSION=$(grep version package.json | sed 's/.*"version": "\(.*\)".*/\1/')
+          echo "Current version is $VERSION"
+          echo "::set-output name=version::$VERSION"
