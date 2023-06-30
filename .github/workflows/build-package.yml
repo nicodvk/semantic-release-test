@@ -3,7 +3,7 @@ name: "[BUILD] RELEASE : Build & Deploy"
 on:
   push:
     tags:
-      - "*.*.*"
+      - "v*.*.*"
   workflow_dispatch:
 
 jobs:
