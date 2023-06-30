@@ -9,7 +9,7 @@ on:
 jobs:
   npm-get-version:
     name: "#️⃣ Get project version"
-    runs-on: [self-hosted, Linux, standard]
+    runs-on: ubuntu-latest
     outputs:
       app_version: ${{ steps.get_version.outputs.version }}
     steps:
